@@ -1,0 +1,15 @@
+name: Test schedule job every 2 minutes
+
+on:
+  schedule:
+    - cron: '*/2 * * * *'
+
+jobs: 
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout 
+        uses: actions/checkout@v4
+
+      - name: greeting
+        run: echo " Hello World ${date}"
