@@ -8,8 +8,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: checkout 
-        uses: actions/checkout@v4
-
       - name: greeting
-        run: echo " Hello World ${date}"
+        run: echo "Hello World $(date)"
