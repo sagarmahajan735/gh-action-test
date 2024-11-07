@@ -1,0 +1,22 @@
+name: Triggering manual Github action event
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: 'Name of the person to greet'
+        required: true
+        type: string
+      greeting:
+        description: 'type of greeting'
+        required: true
+        type: string
+
+jobs:
+  greet:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Display the greeting
+        run: | 
+          echo "Hello ${{ inputs.name }}!"
+          echo "${{inputs.greeting}}"
