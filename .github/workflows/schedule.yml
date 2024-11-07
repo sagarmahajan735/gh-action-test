@@ -1,8 +1,8 @@
-name: Test schedule job every 2 minutes
+name: Test schedule job every 5 minutes
 
 on:
   schedule:
-    - cron: '*/2 * * * *'
+    - cron: '*/5 * * * *'
 
 jobs: 
   test:
