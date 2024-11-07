@@ -19,5 +19,10 @@ jobs:
 
     steps:
       - name: Testing multiple events
-        run: echo "triggering multiple events"
-        
+        run:
+          echo "triggering multiple events"  
+          echo "event name $GITHUB_EVENT_NAME"
+          echo "github actor $GITHUB_ACTOR"
+          echo "github job $GITHUB_JOB"
+          echo "github ref $GITHUB_REF"
+          echo "github action $GITHUB_ACTION"
