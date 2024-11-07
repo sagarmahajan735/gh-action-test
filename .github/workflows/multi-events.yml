@@ -1,0 +1,23 @@
+name: Testing multiple events
+
+on:
+  push:
+    branches:
+      - main
+      - dev
+  pull_request:
+    branches:
+      - main
+      - dev
+  issues:
+    types:
+      - closed
+
+jobs:
+  multiple_events:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Testing multiple events
+        run: echo "triggering multiple events"
+        
