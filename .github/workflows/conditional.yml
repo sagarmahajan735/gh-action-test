@@ -3,7 +3,7 @@ name: Test the conditional workflow
 on: [push, pull_request]
 jobs:
   say-hello:
-    if: github.event_name == 'push'
+    if: github.repository_owner_id == 'sagarmahajan735'
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
