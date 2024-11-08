@@ -3,14 +3,14 @@ name: Test the conditional workflow
 on: [push, pull_request]
 jobs:
   say-hello:
-    if: github.repository_owner_id == 'sagarmahajan735'
+    if: github.repository_owner == 'sagarmahajan735'
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
-        run: echo Triggered by the push event ${github.event_name}
+        run: echo Triggered by the owner
 
   say-bye:
     runs-on: ubuntu-latest
     steps:
       - name: say bye
-        run: echo triggered by the pull request event
+        run: echo triggered by non owner
