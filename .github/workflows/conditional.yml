@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Say hello
-        run: echo Triggered by the push event
+        run: echo Triggered by the push event ${github.event_name}
 
   say-bye:
     runs-on: ubuntu-latest
