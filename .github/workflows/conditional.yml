@@ -1,0 +1,16 @@
+name: Test the conditional workflow
+
+on: [push, pull_request]
+jobs:
+  say-hello:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello
+        run: echo Triggered by the push event
+  
+  say-bye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: say bye
+        run: echo triggered by the pull request event
