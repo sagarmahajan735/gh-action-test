@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Say hello
         run: echo Triggered by the push event
-  
+
   say-bye:
     runs-on: ubuntu-latest
     steps:
