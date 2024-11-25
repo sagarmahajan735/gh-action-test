@@ -17,4 +17,4 @@ jobs:
 
     steps:
       - name: greet the user
-        run: echo "hi ${github.actor}"
+        run: echo "hi $GITHUB_ACTOR"
