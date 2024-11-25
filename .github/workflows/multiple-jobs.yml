@@ -1,0 +1,20 @@
+name: example of running multiple jobs
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  initial_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: say hi
+        run: echo "hi"
+
+  another_job:
+    needs: initial_job
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: greet the user
+        run: echo "hi ${github.actor}"
