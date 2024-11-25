@@ -14,4 +14,4 @@ jobs:
         # flexibility in setting values based on the run time conditions
       
       - name: echo value that user set dynamically
-        run: echo $VAR_NAME
+        run: echo {{env.VAR_NAME}}
