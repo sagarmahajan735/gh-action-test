@@ -1,0 +1,26 @@
+name: Checking repo with codeql
+on:
+  push:
+    branches: [main]
+  
+  workflow_dispatch:
+
+jobs:
+  codeQl-analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+
+      - name: setup node repository
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+
+      - name: run script
+        run : node index.js
+
+      - name: run code codeQl
+        uses: github/codeql-action/analyze@v2
+        with:
+          languages: javascript
