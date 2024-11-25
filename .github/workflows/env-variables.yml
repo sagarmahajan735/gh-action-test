@@ -1,0 +1,15 @@
+name: setting the environment variables
+on: 
+  push:
+    branches: [main]
+
+jobs:
+  env_variables:
+    runs-on: ubuntu-latest
+    steps:
+      - name: set the adhoc env variables
+        run: echo "VAR_NAME = value" >> $GITHUB_ENV
+        # flexibility in setting values based on the run time conditions
+      
+      - name: echo value that user set dynamically
+        run: echo $VAR_NAME
