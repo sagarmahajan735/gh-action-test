@@ -20,6 +20,9 @@ jobs:
       - name: run script
         run : node index.js
 
+      - name: set up code ql
+        run: github/codeql-action/init@v2
+
       - name: run code codeQl
         uses: github/codeql-action/analyze@v2
         with:
