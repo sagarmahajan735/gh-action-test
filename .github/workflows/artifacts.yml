@@ -15,7 +15,7 @@ jobs:
         uses: actions/upload-artifact@main
         with:
           name: test-artifacts
-          path: public/readme.md
+          path: readme.md
 
   download-artifacts:
     needs: upload-artifact
@@ -29,5 +29,5 @@ jobs:
         uses: actions/download-artifacts@main
         with:
           name: test-artifacts
-          path: public/readme.md
+          path: readme.md
       
