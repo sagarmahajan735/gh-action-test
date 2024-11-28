@@ -1,0 +1,33 @@
+name: demonstration of the artifact related actions
+on:
+  push: 
+    branches: [main]
+
+jobs: 
+  upload-artifact:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4
+      
+      - name: upload artifact
+        uses: actions/upload-artifact@main
+        with:
+          name: test-artifacts
+          path: public/readme.md
+
+  download-artifacts:
+    needs: upload-artifact
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: checkout repository
+        uses: actions/checkout@v4 
+      
+      - name: download artifact
+        uses: actions/download-artifacts@main
+        with:
+          name: test-artifacts
+          path: public/readme.md
+      
