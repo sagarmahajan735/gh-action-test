@@ -20,7 +20,7 @@ jobs:
             })
 
             github.rest.projects.createCard({
-              column_id: 1
+              column_id: 1,
               note: note,
               content_id: context.payload.issue.id,
               content-type: "Issue"
