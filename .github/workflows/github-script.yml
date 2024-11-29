@@ -21,7 +21,7 @@ jobs:
 
             github.rest.projects.createCard({
               column_id: {{columnID}}
-              note: ,
+              note: note,
               content_id: context.payload.issue.id,
               content-type: "Issue"
             })
