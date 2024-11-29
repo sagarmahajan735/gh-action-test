@@ -23,17 +23,17 @@ jobs:
               column_id: 1,
               note: note,
               content_id: context.payload.issue.id,
-              content-type: "Issue"
+              content_type: "Issue"
             })
         
                 
-      - name: Add label to the issue
-        uses: actions/github-script@main
-        with: 
-          github-token: ${{secrets.GITHUB_TOKEN}} 
-          script: |
-            github.rest.issues.createLabel({
-              owner: context.issue.number,
-              repo: context.repo.repo,
-              name: 'issue'
-            })    
+      # - name: Add label to the issue
+      #   uses: actions/github-script@main
+      #   with: 
+      #     github-token: ${{secrets.GITHUB_TOKEN}} 
+      #     script: |
+      #       github.rest.issues.createLabel({
+      #         owner: context.issue.number,
+      #         repo: context.repo.repo,
+      #         name: 'issue'
+      #       })    
