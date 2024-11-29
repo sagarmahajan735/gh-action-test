@@ -27,5 +27,5 @@ jobs:
             github.rest.issues.createLabel({
               owner: context.issue.number,
               repo: context.repo.repo,
-              name: :watermelon:
+              name: watermelon:
             })    
