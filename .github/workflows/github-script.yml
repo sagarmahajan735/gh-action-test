@@ -18,6 +18,14 @@ jobs:
               repo: context.repo.repo,
               body: 'This is welcome message created using github script'
             })
+
+            github.rest.projects.createCard({
+              column_id: {{columnID}}
+              note: ,
+              content_id: context.payload.issue.id,
+              content-type: "Issue"
+            })
+        
                 
       - name: Add label to the issue
         uses: actions/github-script@main
@@ -27,5 +35,5 @@ jobs:
             github.rest.issues.createLabel({
               owner: context.issue.number,
               repo: context.repo.repo,
-              name: watermelon:
+              name: 'issue'
             })    
