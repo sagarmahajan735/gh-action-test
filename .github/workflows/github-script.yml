@@ -25,7 +25,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}} 
           script: |
             github.rest.issues.createLabel({
-              owner: context.issue.number
-              repo: context.repo.repo
+              owner: context.issue.number,
+              repo: context.repo.repo,
               name: :watermelon:
             })    
